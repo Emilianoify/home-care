@@ -5,6 +5,8 @@ import morgan from "morgan";
 import cookieParser from "cookie-parser";
 import bodyParser from "body-parser";
 import { ERROR_MESSAGES } from "./utils/constants/messages/error.messages";
+import authRoutes from "./routes/auth/auth.routes";
+import userRoutes from "./routes/user/user.routes";
 
 const app = express();
 
@@ -25,6 +27,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.get("/api/health", (_req, res) => {
   res.status(200).json({ status: "OK" });
 });
+
+app.use("/auth", authRoutes);
+app.use("/user", userRoutes);
 
 // 404 handler
 app.use((_req, res) => {

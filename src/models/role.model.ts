@@ -1,6 +1,6 @@
 import { DataTypes } from "sequelize";
 import sequelize from "../config/db";
-import { COMMENTS } from "src/utils/constants/messages/comments";
+import { COMMENTS } from "../utils/constants/messages/comments";
 
 const Role = sequelize.define(
   "Role",

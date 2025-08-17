@@ -1,6 +1,6 @@
 import { DataTypes } from "sequelize";
 import sequelize from "../config/db";
-import { ERROR_MESSAGES } from "src/utils/constants/messages/error.messages";
+import { ERROR_MESSAGES } from "../utils/constants/messages/error.messages";
 
 const User = sequelize.define(
   "User",
