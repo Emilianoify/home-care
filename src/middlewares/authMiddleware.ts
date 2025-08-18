@@ -1,8 +1,7 @@
-import "dotenv/config";
 import { Response, NextFunction } from "express";
 import jwt from "jsonwebtoken";
 import { ERROR_MESSAGES } from "../utils/constants/messages/error.messages";
-import { Role, User } from "../models";
+import { User, Role } from "../models";
 import { AuthRequest, JwtPayload } from "../interfaces/auth.interface";
 import { IUser } from "../interfaces/user.interface";
 
@@ -44,7 +43,7 @@ export const authMiddleware = async (
         {
           model: Role,
           as: "role",
-          attributes: ["id", "name", "permissions"],
+          attributes: ["id", "name", "permissions", "isActive"],
         },
       ],
       attributes: { exclude: ["password"] },

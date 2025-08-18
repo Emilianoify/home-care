@@ -142,9 +142,6 @@ export const updateProfile = async (
 
     // Log de actualización
     const updatedFields = Object.keys(updateData);
-    console.log(
-      `👤 Perfil actualizado para usuario: ${updatedUser.username} - Campos: ${updatedFields.join(", ")}`,
-    );
 
     // Preparar datos de respuesta
     const responseData = {

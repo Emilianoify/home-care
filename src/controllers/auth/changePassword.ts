@@ -102,14 +102,6 @@ export const changePassword = async (
     // Esto fuerza logout en todos los dispositivos
     revokeAllUserTokens(userId, "password_change");
 
-    // Log de seguridad
-    console.log(
-      `🔐 Contraseña cambiada por el usuario: ${user.username} (${user.corporative_email})`,
-    );
-    console.log(
-      `🚫 Todos los tokens del usuario han sido revocados por cambio de contraseña`,
-    );
-
     // Respuesta exitosa (sin datos sensibles)
     sendSuccessResponse(
       res,

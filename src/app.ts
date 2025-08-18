@@ -7,6 +7,7 @@ import bodyParser from "body-parser";
 import { ERROR_MESSAGES } from "./utils/constants/messages/error.messages";
 import authRoutes from "./routes/auth/auth.routes";
 import userRoutes from "./routes/user/user.routes";
+import adminRoutes from "./routes/admin/admin.routes";
 
 const app = express();
 
@@ -23,13 +24,9 @@ app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// Health check endpoint
-app.get("/api/health", (_req, res) => {
-  res.status(200).json({ status: "OK" });
-});
-
 app.use("/auth", authRoutes);
 app.use("/user", userRoutes);
+app.use("/admin", adminRoutes);
 
 // 404 handler
 app.use((_req, res) => {

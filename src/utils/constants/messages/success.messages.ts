@@ -16,6 +16,10 @@ export const SUCCESS_MESSAGES = {
     PROFILE_RETRIEVED: "Perfil obtenido exitosamente.",
     PROFILE_UPDATED: "Perfil actualizado exitosamente.",
   },
+  ADMIN: {
+    PASSWORD_CHANGED_SUCCESS:
+      "Contraseña cambiada exitosamente por administrador.",
+  },
   SERVER: {
     STARTUP: "Server running on",
   },

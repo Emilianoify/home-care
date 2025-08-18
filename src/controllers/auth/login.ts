@@ -113,6 +113,7 @@ export const login = async (req: Request, res: Response): Promise<void> => {
           id: user.role.id,
           name: user.role.name,
           permissions: user.role.permissions,
+          isActive: user.role.isActive,
         },
         lastLogin: new Date(),
       },

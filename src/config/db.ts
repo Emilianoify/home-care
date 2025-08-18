@@ -1,7 +1,6 @@
 import "dotenv/config";
 import { Sequelize } from "sequelize";
 import { ERROR_MESSAGES } from "../utils/constants/messages/error.messages";
-import { SUCCESS_MESSAGES } from "../utils/constants/messages/success.messages";
 
 const { DB_HOST, DB_PORT, DB_NAME, DB_USER, DB_PASS } = process.env;
 
@@ -25,7 +24,6 @@ const sequelize = new Sequelize(DB_NAME, DB_USER, DB_PASS, {
 export const testDbConnection = async (): Promise<void> => {
   try {
     await sequelize.authenticate();
-    console.log(SUCCESS_MESSAGES.DB.DB_CONNECTED);
   } catch (error) {
     console.error(ERROR_MESSAGES.DB.DB_CONNECTION, error);
     throw error;

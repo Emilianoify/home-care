@@ -36,10 +36,17 @@ export const ERROR_MESSAGES = {
     INVALID_TOKEN_TYPE: "Tipo de token inválido. Se esperaba refresh token.",
     REFRESH_TOKEN_EXPIRED: "Refresh token expirado. Inicia sesión nuevamente.",
     INVALID_REFRESH_TOKEN: "Refresh token inválido.",
-
+    ADMIN_REQUIRED:
+      "Se requieren permisos de administrador para acceder a este recurso.",
     MISSING_PASSWORD_FIELDS:
       "Contraseña actual y nueva contraseña son requeridas.",
     INVALID_CURRENT_PASSWORD: "Contraseña actual incorrecta.",
+  },
+  ADMIN: {
+    USER_ID_REQUIRED: "ID de usuario es requerido.",
+    NEW_PASSWORD_REQUIRED: "Nueva contraseña es requerida.",
+    TARGET_USER_NOT_FOUND: "Usuario objetivo no encontrado.",
+    TARGET_USER_INACTIVE: "Usuario objetivo está inactivo.",
   },
   SERVER: {
     STARTUP: "Error al iniciar el servidor.",

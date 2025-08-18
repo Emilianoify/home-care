@@ -11,6 +11,7 @@ export const checkToken = async (
 ): Promise<void> => {
   try {
     // Extraer token del header Authorization
+
     const authHeader = req.headers.authorization;
 
     if (!authHeader || !authHeader.startsWith("Bearer ")) {

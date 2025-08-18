@@ -10,14 +10,10 @@ const PORT = process.env.PORT || 3000;
 
 const initializeDatabase = async (): Promise<void> => {
   try {
-    console.log("🔗 Conectando a la base de datos...");
     await testDbConnection();
 
-    console.log("🏗️  Sincronizando modelos con la base de datos...");
     await sequelize.sync({ alter: true });
-    console.log(SUCCESS_MESSAGES.DB.DB_SYNCED);
 
-    console.log("🌱 Inicializando datos por defecto...");
     await createDefaultRoles();
 
     console.log("✅ Base de datos inicializada correctamente\n");
@@ -35,7 +31,6 @@ const startServer = async (): Promise<void> => {
     // Iniciar servidor
     app.listen(PORT, () => {
       console.log(`${SUCCESS_MESSAGES.SERVER.STARTUP} ${PORT}`);
-      console.log("🚀 Servidor listo para recibir peticiones\n");
     });
   } catch (error) {
     console.error(ERROR_MESSAGES.SERVER.STARTUP, error);

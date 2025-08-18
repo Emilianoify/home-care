@@ -109,9 +109,6 @@ export const refreshToken = async (
     // Actualizar lastLogin para tracking
     await User.update({ lastLogin: new Date() }, { where: { id: user.id } });
 
-    // Log para debugging
-    console.log(`🔄 Token refrescado para usuario: ${user.username}`);
-
     // Preparar respuesta
     const responseData = {
       accessToken: newAccessToken,

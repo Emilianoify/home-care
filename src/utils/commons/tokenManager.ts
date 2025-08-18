@@ -7,7 +7,11 @@ interface RevokedToken {
 interface UserTokenRevocation {
   userId: string;
   revokedAt: Date;
-  reason: "password_change" | "security_breach" | "admin_action";
+  reason:
+    | "password_change"
+    | "security_breach"
+    | "admin_action"
+    | "admin_password_change";
 }
 
 // Blacklist de tokens específicos (sistema actual)
