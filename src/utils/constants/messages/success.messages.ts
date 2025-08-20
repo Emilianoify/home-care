@@ -2,6 +2,7 @@ export const SUCCESS_MESSAGES = {
   DB: {
     DB_CONNECTED: "Conexión a la base de datos establecida correctamente.",
     DB_SYNCED: "Sincronización de base de datos completada.",
+    DB_UP: "Base de datos inicializada correctamente",
   },
   AUTH: {
     LOGIN_SUCCESS: "Inicio de sesión exitoso.",
@@ -19,6 +20,12 @@ export const SUCCESS_MESSAGES = {
   ADMIN: {
     PASSWORD_CHANGED_SUCCESS:
       "Contraseña cambiada exitosamente por administrador.",
+    USER_PROFILE_RETRIEVED: "Perfil de usuario obtenido exitosamente.",
+
+    USER_PROFILE_UPDATED:
+      "Perfil de usuario actualizado exitosamente por administrador.",
+    NO_CHANGES_DETECTED:
+      "No se detectaron cambios en los datos proporcionados.",
   },
   SERVER: {
     STARTUP: "Server running on",

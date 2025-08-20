@@ -16,9 +16,9 @@ const initializeDatabase = async (): Promise<void> => {
 
     await createDefaultRoles();
 
-    console.log("✅ Base de datos inicializada correctamente\n");
+    console.log(SUCCESS_MESSAGES.DB.DB_UP);
   } catch (error) {
-    console.error("❌ Error inicializando la base de datos:", error);
+    console.error(ERROR_MESSAGES.DB.DB_CONNECTION, error);
     throw error;
   }
 };

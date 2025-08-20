@@ -45,11 +45,6 @@ export function revokeAllUserTokens(
     revokedAt: new Date(),
     reason,
   });
-
-  console.log(
-    `🚫 Todos los tokens del usuario ${userId} han sido revocados (${reason})`,
-  );
-
   // Limpiar revocaciones antiguas
   cleanOldUserRevocations();
 }
@@ -86,18 +81,11 @@ function cleanOldTokens(): void {
   const thirtyDaysAgo = new Date();
   thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
 
-  const originalLength = revokedTokens.length;
   revokedTokens.splice(
     0,
     revokedTokens.length,
     ...revokedTokens.filter((rt) => rt.revokedAt > thirtyDaysAgo),
   );
-
-  if (revokedTokens.length < originalLength) {
-    console.log(
-      `🧹 Limpieza: ${originalLength - revokedTokens.length} tokens antiguos eliminados`,
-    );
-  }
 }
 
 // Limpiar revocaciones de usuario antiguas
@@ -105,18 +93,11 @@ function cleanOldUserRevocations(): void {
   const thirtyDaysAgo = new Date();
   thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
 
-  const originalLength = userTokenRevocations.length;
   userTokenRevocations.splice(
     0,
     userTokenRevocations.length,
     ...userTokenRevocations.filter((ur) => ur.revokedAt > thirtyDaysAgo),
   );
-
-  if (userTokenRevocations.length < originalLength) {
-    console.log(
-      `🧹 Limpieza: ${originalLength - userTokenRevocations.length} revocaciones de usuario antiguas eliminadas`,
-    );
-  }
 }
 
 // Funciones de compatibilidad con el sistema actual
